@@ -3,6 +3,7 @@ package ru.laneboy.medic.presentation
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ru.laneboy.medic.R
@@ -33,10 +34,12 @@ class OnboardingItemsAdapter(private val ondoardingItems: List<OndoardingItem>) 
 
         private val textViewTitle = view.findViewById<TextView>(R.id.tv_title)
         private val textViewDescription = view.findViewById<TextView>(R.id.tv_description)
+        private val imageViewPicture = view.findViewById<ImageView>(R.id.iv_picture_onBoarding)
 
         fun bindViews(ondoardingItem: OndoardingItem) {
             textViewTitle.text = ondoardingItem.title
             textViewDescription.text = ondoardingItem.description
+            imageViewPicture.setImageResource(ondoardingItem.image)
         }
     }
 }

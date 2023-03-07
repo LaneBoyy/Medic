@@ -30,4 +30,12 @@
         android:textSize="14sp"
         tools:text="@string/text_analyzes_description" />
 
+    <ImageView
+        android:layout_marginTop="100dp"
+        android:id="@+id/iv_picture_onBoarding"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ic_analyzes_picture" />
+
 </LinearLayout>
