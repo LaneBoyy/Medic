@@ -12,8 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import ru.laneboy.medic.R
-import ru.laneboy.medic.SignInFragment
-import ru.laneboy.medic.data.OndoardingItem
+import ru.laneboy.medic.data.OnboardingItem
 import ru.laneboy.medic.databinding.FragmentOnboardingScreenBinding
 
 class OnboardingScreenFragment : Fragment() {
@@ -48,23 +47,24 @@ class OnboardingScreenFragment : Fragment() {
     private fun launchSignInFragment() {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, SignInFragment.newInstance())
+            .addToBackStack(null)
             .commit()
     }
 
     private fun setOnboardingItems() {
         onboardingItemsAdapter = OnboardingItemsAdapter(
             listOf(
-                OndoardingItem(
+                OnboardingItem(
                     getString(R.string.text_analyzes),
                     getString(R.string.text_analyzes_description),
                     R.drawable.ic_analyzes_picture
                 ),
-                OndoardingItem(
+                OnboardingItem(
                     getString(R.string.text_notifications),
                     getString(R.string.text_notifications_description),
                     R.drawable.ic_notifications_picture
                 ),
-                OndoardingItem(
+                OnboardingItem(
                     getString(R.string.text_monitoring),
                     getString(R.string.text_monitoring_description),
                     R.drawable.ic_monitoring_picture
@@ -110,6 +110,8 @@ class OnboardingScreenFragment : Fragment() {
 
     private fun setCurrentIndicators(position: Int) {
         val childCount = binding.indicatorsContainer.childCount
+        if (position == 2)
+            binding.buttonFinishOnBoarding.text = getString(R.string.text_finish)
         for (i in 0 until childCount) {
             val imageView = binding.indicatorsContainer.getChildAt(i) as ImageView
             if (i == position) {

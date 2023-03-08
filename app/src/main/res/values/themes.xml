@@ -16,16 +16,4 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="hintTextColor">@color/grey_dark</item>
-        <item name="android:textColorHint">@color/grey_dark</item>
-        <item name="boxStrokeWidth">10dp</item>
-        <item name="boxStrokeWidthFocused">0dp</item>
-        <item name="boxCornerRadiusBottomEnd">10dp</item>
-        <item name="boxCornerRadiusBottomStart">10dp</item>
-        <item name="boxCornerRadiusTopEnd">10dp</item>
-        <item name="boxCornerRadiusTopStart">10dp</item>
-        <item name="boxBackgroundColor">@color/grey_light</item>
-    </style>
-
 </resources>

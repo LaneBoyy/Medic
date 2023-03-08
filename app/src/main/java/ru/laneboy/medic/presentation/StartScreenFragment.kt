@@ -28,7 +28,7 @@ class StartScreenFragment : Fragment() {
 
     private suspend fun launchOnboardingScreenFragment() {
         delay(2000)
-        requireActivity().supportFragmentManager.beginTransaction()
+        parentFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, OnboardingScreenFragment.newInstance())
             .commit()
     }

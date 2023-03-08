@@ -9,8 +9,10 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="blue">#57A9FF</color>
+    <color name="blue_btn">#1A6FEE</color>
     <color name="green">#00B712</color>
     <color name="grey">#939396</color>
     <color name="grey_dark">#7E7E9A</color>
     <color name="grey_light">#EBEBEB</color>
+    <color name="grey_background">#EBEBEB</color>
 </resources>
