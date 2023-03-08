@@ -12,7 +12,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import ru.laneboy.medic.R
 import ru.laneboy.medic.databinding.FragmentEmailBinding
-import java.util.*
 
 class EmailFragment : Fragment() {
 
@@ -39,7 +38,7 @@ class EmailFragment : Fragment() {
 
     private fun setOnPinEnteredListener() {
         binding.txtPinEntry.setOnPinEnteredListener { str ->
-            if (str.toString() == "1234") {
+            if (str.toString() == "1111") {
                 launchCreatePasswordFragment()
             } else {
                 Toast.makeText(requireContext(), "Введен неверный код", Toast.LENGTH_SHORT)
@@ -51,8 +50,7 @@ class EmailFragment : Fragment() {
 
     private fun launchCreatePasswordFragment() {
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, CreatePasswordFragment.newInstance())
-            .addToBackStack(null)
+            .replace(R.id.fragment_container, CreatePatientChartFragment.newInstance())
             .commit()
     }
 
@@ -65,8 +63,8 @@ class EmailFragment : Fragment() {
         runTimer()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onDetach() {
+        super.onDetach()
         _binding = null
     }
 

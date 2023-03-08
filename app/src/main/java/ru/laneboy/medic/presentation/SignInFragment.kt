@@ -48,9 +48,9 @@ class SignInFragment : Fragment() {
                 && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding
     }
 
     companion object {

@@ -45,9 +45,8 @@ class OnboardingScreenFragment : Fragment() {
     }
 
     private fun launchSignInFragment() {
-        requireActivity().supportFragmentManager.beginTransaction()
+        parentFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, SignInFragment.newInstance())
-            .addToBackStack(null)
             .commit()
     }
 
@@ -126,6 +125,8 @@ class OnboardingScreenFragment : Fragment() {
                     ContextCompat.getDrawable(
                         requireContext().applicationContext,
                         R.drawable.indicator_inactive_background
+
+
                     )
                 )
             }

@@ -16,7 +16,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         removeStatusBar()
-        launchStartScreenFragment()
+
+//        ВКЛЮЧИТЬ КОГДА БУДЕТ ГОТОВО
+//        launchStartScreenFragment()
+
+        launchCreatePatientFragment()
     }
 
     private fun removeStatusBar() {
@@ -29,6 +33,12 @@ class MainActivity : AppCompatActivity() {
     private fun launchStartScreenFragment() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, StartScreenFragment.newInstance())
+            .commit()
+    }
+
+    private fun launchCreatePatientFragment() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, CreatePatientChartFragment.newInstance())
             .commit()
     }
 }

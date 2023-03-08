@@ -18,4 +18,6 @@
     <string name="text_yandex">Войти с Яндекс</string>
     <string name="text_email_code">Введите код из E-mail</string>
     <string name="text_timer">Отправить код повторно можно будет через %s секунд</string>
+    <string name="text_create_patient_card">Создание карты\nпациента</string>
+    <string name="text_without_card">Без карты пациента вы не сможете заказать анализы.\n\nВ картах пациентов будут храниться результаты анализов вас и ваших близких.</string>
 </resources>

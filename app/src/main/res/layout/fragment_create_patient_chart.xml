@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="80dp"
+    android:orientation="vertical"
+    tools:context=".presentation.CreatePatientChartFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="@string/text_create_patient_card"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btn_skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display"
+            android:gravity="end"
+            android:text="@string/text_skip"
+            android:textColor="@color/blue_btn"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="@string/text_without_card"
+            android:textColor="@color/grey"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginVertical="12dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/sf_pro_display"
+            android:hint="Имя"
+            android:inputType="textEmailAddress"
+            android:lines="1"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_dark"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_second_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginVertical="12dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/sf_pro_display"
+            android:hint="Отчество"
+            android:inputType="textEmailAddress"
+            android:lines="1"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_dark"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_surname"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginVertical="12dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/sf_pro_display"
+            android:hint="Фамилия"
+            android:inputType="textEmailAddress"
+            android:lines="1"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_dark"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_date_of_bth"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginVertical="12dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/sf_pro_display"
+            android:hint="Дата рождения"
+            android:lines="1"
+            android:inputType="date"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_dark"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_male"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginVertical="12dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/sf_pro_display"
+            android:hint="Пол"
+            android:inputType="textEmailAddress"
+            android:lines="1"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_dark"
+            android:textSize="15sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_create"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/button_next_background"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="Создать"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>
