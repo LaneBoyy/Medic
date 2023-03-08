@@ -1,13 +1,15 @@
 package ru.laneboy.medic.presentation
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import ru.laneboy.medic.R
 import ru.laneboy.medic.databinding.FragmentEmailBinding
 import java.util.*
@@ -29,7 +31,10 @@ class EmailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setOnPinEnteredListener()
-        runTimer()
+
+        lifecycleScope.launch(Dispatchers.Main) {
+            runTimer()
+        }
     }
 
     private fun setOnPinEnteredListener() {
@@ -51,22 +56,13 @@ class EmailFragment : Fragment() {
             .commit()
     }
 
-    private fun runTimer() {
-        var seconds = SECONDS
-        val handler = Handler()
-        val textViewTimer = requireActivity().findViewById<TextView>(R.id.tv_timer)
-        handler.post(object : Runnable {
-            override fun run() {
-                val secs = seconds
-                val time = String.format(Locale.getDefault(), getString(R.string.text_timer), secs)
-                textViewTimer.text = time
-                seconds--
-                if (seconds == 0) {
-                    seconds = SECONDS
-                }
-                handler.postDelayed(this, 1000)
-            }
-        })
+    private suspend fun runTimer() {
+        for (i in SECONDS downTo 1) {
+            binding.tvTimer.text = String.format(getString(R.string.text_timer), i)
+            delay(1000)
+        }
+        binding.tvTimer.text = SECONDS.toString()
+        runTimer()
     }
 
     override fun onDestroyView() {
