@@ -22,6 +22,17 @@ class AnalyzesMainScreenFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        launchChildHomeScreenFragment()
+    }
+
+    private fun launchChildHomeScreenFragment() {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container_on_home_screen, ChildHomeScreenFragment.newInstance())
+            .commit()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null

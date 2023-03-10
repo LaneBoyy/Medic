@@ -15,4 +15,5 @@
     <color name="grey_dark">#7E7E9A</color>
     <color name="grey_light">#EBEBEB</color>
     <color name="grey_background">#EBEBEB</color>
+    <color name="bottom_menu_item_color">#C4C4C4</color>
 </resources>

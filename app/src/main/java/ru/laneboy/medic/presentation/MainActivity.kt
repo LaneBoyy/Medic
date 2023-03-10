@@ -2,6 +2,8 @@ package ru.laneboy.medic.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.WindowManager
 import ru.laneboy.medic.R
 import ru.laneboy.medic.databinding.ActivityMainBinding
@@ -18,10 +20,11 @@ class MainActivity : AppCompatActivity() {
         removeStatusBar()
 
 //        ВКЛЮЧИТЬ КОГДА БУДЕТ ГОТОВО
-//        launchStartScreenFragment()
+//       launchStartScreenFragment()
 
         launchCreatePatientFragment()
     }
+
 
     private fun removeStatusBar() {
         window.setFlags(
